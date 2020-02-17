@@ -8,9 +8,11 @@ const port = 3000;
 
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
-  res.render(`${viewsFolder}/index.ejs`);
-});
+const weatherRouter = require(path.join(__dirname + '/weather-app-routes'));
+app.use('/', weatherRouter);
+// app.get('/', (req, res) => {
+//   res.render(`${viewsFolder}/index.ejs`);
+// });
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
