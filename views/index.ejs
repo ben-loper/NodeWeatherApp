@@ -3,17 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to Test!</title>
+    <title>Weather Forecast</title>
     <link rel="stylesheet" href="/css/index.css" type="text/css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="/images/weather-icon.png" />
   </head>
   <body>
     <div id="main-content">
       <h1>What's the weather?</h1>
-      <form action="/weather-forecast" method="get">
+      <form>
         <div id="lbl-input-section">
           <label for="location" id="location-input-lbl"
             >Enter a Location!</label
@@ -31,5 +32,138 @@
         <input type="submit" value="Get Weather" id="sbmt-btn" />
       </form>
     </div>
+    <div id="weather-result" style="display: none;">
+      <canvas
+        id="clear-day"
+        class="icon"
+        style="display: none"
+        width="64"
+        height="64"
+      >
+      </canvas>
+
+      <canvas
+        id="clear-night"
+        class="icon"
+        style="display: none"
+        width="64"
+        height="64"
+      >
+      </canvas>
+
+      <canvas
+        id="partly-cloudy-day"
+        class="icon"
+        style="display:none"
+        width="64"
+        height="64"
+      >
+      </canvas>
+
+      <canvas
+        id="partly-cloudy-night"
+        class="icon"
+        style="display:none"
+        width="64"
+        height="64"
+      >
+      </canvas>
+
+      <canvas
+        id="cloudy"
+        class="icon"
+        style="display:none"
+        width="64"
+        height="64"
+      >
+      </canvas>
+
+      <canvas
+        id="rain"
+        class="icon"
+        style="display:none"
+        width="64"
+        height="64"
+      >
+      </canvas>
+
+      <canvas
+        id="sleet"
+        class="icon"
+        style="display:none"
+        width="64"
+        height="64"
+      >
+      </canvas>
+
+      <canvas
+        id="snow"
+        class="icon"
+        style="display:none"
+        width="64"
+        height="64"
+      >
+      </canvas>
+
+      <canvas
+        id="wind"
+        class="icon"
+        style="display:none"
+        width="64"
+        height="64"
+      >
+      </canvas>
+
+      <canvas id="fog" class="icon" style="display:none" width="64" height="64">
+      </canvas>
+
+      <p><span id="location-name"></span></p>
+      <p><span id="summary"></span></p>
+      <p><span id="temperature"></span>&#176;F</p>
+      <p>Wind speeds of <span id="wind-speed"></span> MPH</p>
+      <p>Wind gusts of <span id="wind-gust"></span> MPH</p>
+    </div>
+    <div id="error-message" style="display: none;">
+      <p>
+        Shoot! There was error while getting the weather for the given location!
+      </p>
+      <p>
+        Try searching for another location.
+      </p>
+    </div>
+    <script src="/js/index.js"></script>
+    <script src="/js/skycons.js"></script>
+    <script>
+      var icons = new Skycons({ monochrome: false }),
+        list = [
+          'clear-day',
+          'clear-night',
+          'partly-cloudy-day',
+          'partly-cloudy-night',
+          'cloudy',
+          'rain',
+          'showers-day',
+          'showers-night',
+          'sleet',
+          'rain-snow',
+          'rain-snow-showers-day',
+          'rain-snow-showers-night',
+          'snow',
+          'snow-showers-day',
+          'snow-showers-night',
+          'wind',
+          'fog',
+          'thunder',
+          'thunder-rain',
+          'thunder-showers-day',
+          'thunder-showers-night',
+          'hail'
+        ],
+        i;
+
+      for (i = list.length; i--; ) icons.set(list[i], list[i]);
+
+      icons.play();
+    </script>
   </body>
 </html>
