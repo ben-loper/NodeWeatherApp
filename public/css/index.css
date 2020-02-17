@@ -48,6 +48,7 @@ h1 {
   color: #1fc8db;
   font-family: 'Roboto Mono', monospace;
   border-radius: 10%;
+  font-size: 15px;
 }
 
 #sbmt-btn:hover {
