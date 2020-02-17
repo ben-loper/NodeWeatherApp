@@ -1,0 +1,27 @@
+{
+  "name": "NodeWeatherApp",
+  "version": "1.0.0",
+  "description": "Following the Complete Nod.js Developer Course, creating a Weather App that geocodes a given location and retrieves the weather forecast for that location",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ben-loper/NodeWeatherApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ben-loper/NodeWeatherApp/issues"
+  },
+  "homepage": "https://github.com/ben-loper/NodeWeatherApp#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
