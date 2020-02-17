@@ -13,7 +13,12 @@ dotenv.config();
 
 // Allow for Node to serve static files (css, js, images)
 app.use(express.static(__dirname + '/public'));
-const port = 3000;
+
+// Setup port for local vs. Heroku deployment
+let port = process.env.PORT;
+if (port == null || port == '') {
+  port = 3000;
+}
 
 // Parses body of requests to JSON
 app.use(
